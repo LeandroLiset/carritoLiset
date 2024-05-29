@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrunkStore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <aside>
+            <header>
+                <h1 class="logo">DrunkStore</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a class="menu boton-volver" href="./index.html"><i
+                                class="bi bi-arrow-left-short"></i></i>Seguir comprando </a></li>
+                    <li><a class="menu boton-carrito active" href="./ecommerce.html"><i
+                                class="bi bi-cart4"></i>Carrito</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="footer">© 2024 - Derechos Reservados</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo">Carrito de compras</h2>
+            <div class="carrito-container">
+                <p class="carrito-vacio">Carrito vacio. Agrega los productos deseados.</p>
+                <div class="carrito-items">
+                    <div class="carrito-item">
+                        <img src="./resources/Whiskies/blacklabel.webp" alt="">
+                        <div class="carrito-item-nombre">
+                            <small>Título</small>
+                            <h3>Johnnie Walker Black Label</h3>
+                        </div>
+                        <div class="carrito-item-cantidad">
+                            <small>Cantidad</small>
+                            <p>1</p>
+                        </div>
+                        <div class="carrito-item-precio">
+                            <small>Precio</small>
+                            <p>$10</p>
+                        </div>
+                        <div class="carrito-item-subtotal">
+                            <small>Subtotal</small>
+                            <p>$10</p>
+                        </div>
+                        <button class="carrito-eliminar"><i class="bi bi-trash3-fill"></i></button>
+                    </div>
+                    <div class="carrito-item">
+                        <img src="./resources/Whiskies/ballantines.webp" alt="">
+                        <div class="carrito-item-nombre">
+                            <small>Título</small>
+                            <h3>Ballantines</h3>
+                        </div>
+                        <div class="carrito-item-cantidad">
+                            <small>Cantidad</small>
+                            <p>2</p>
+                        </div>
+                        <div class="carrito-item-precio">
+                            <small>Precio</small>
+                            <p>$10</p>
+                        </div>
+                        <div class="carrito-item-subtotal">
+                            <small>Subtotal</small>
+                            <p>$20</p>
+                        </div>
+                        <button class="carrito-eliminar"><i class="bi bi-trash3-fill"></i></button>
+                    </div>
+
+                </div>
+                <div class="carrito-dividido">
+                    <div class="carrito-izquierda">
+                        <button class="carrito-vaciar">Vaciar carrito</button>
+                    </div>
+                    <div class="carrito-derecha">
+                        <div class="carrito-acciones-total">
+                            <p>Total:</p>
+                            <p id="total">$30</p>
+                        </div>
+                        <button class="carrito-comprar">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="./js/eccomerce.js"></script>
+</body>
+
+</html>
