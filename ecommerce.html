@@ -30,13 +30,13 @@
         <main>
             <h2 class="titulo">Carrito de compras</h2>
             <div class="carrito-container">
-                <p class="carrito-vacio">Carrito vacio. Agrega los productos deseados.</p>
-                <div class="carrito-items">
+                <p class="carrito-vacio">Carrito vacío. Agrega los productos deseados.</p>
+                <div class="carrito-items disabled">
                     <div class="carrito-item">
-                        <img src="./resources/Whiskies/blacklabel.webp" alt="">
+                        <img class="carrito-imagen" src="./resources/Whiskies/blacklabel.webp" alt="">
                         <div class="carrito-item-nombre">
                             <small>Título</small>
-                            <h3>Johnnie Walker Black Label</h3>
+                            <h3>Black Label</h3>
                         </div>
                         <div class="carrito-item-cantidad">
                             <small>Cantidad</small>
@@ -53,7 +53,7 @@
                         <button class="carrito-eliminar"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                     <div class="carrito-item">
-                        <img src="./resources/Whiskies/ballantines.webp" alt="">
+                        <img class="carrito-imagen" src="./resources/Whiskies/ballantines.webp" alt="">
                         <div class="carrito-item-nombre">
                             <small>Título</small>
                             <h3>Ballantines</h3>
@@ -74,18 +74,19 @@
                     </div>
 
                 </div>
-                <div class="carrito-dividido">
+                <div class="carrito-dividido disabled">
                     <div class="carrito-izquierda">
                         <button class="carrito-vaciar">Vaciar carrito</button>
                     </div>
                     <div class="carrito-derecha">
-                        <div class="carrito-acciones-total">
+                        <div class="carrito-total">
                             <p>Total:</p>
                             <p id="total">$30</p>
                         </div>
                         <button class="carrito-comprar">Comprar Ahora</button>
                     </div>
                 </div>
+                <p class="comprado disabled">Muchas gracias por comprar en DrunkStore.</p>
             </div>
 
         </main>

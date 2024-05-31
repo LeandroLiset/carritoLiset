@@ -16,13 +16,14 @@
                 <h1 class="logo">DrunkStore</h1>
             </header>
             <nav>
-                <ul>
-                    <li><button class="menu boton-nav active"><i class="bi bi-list"></i>Todos los productos</button></li>
-                    <li><button class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Cervezas</button></li>
-                    <li><button class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Gin</button></li>
-                    <li><button class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Vinos</button></li>
-                    <li><button class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Whiskies</button></li>
-                    <li><a class="menu boton-carrito" href="./ecommerce.html"><i class="bi bi-cart4"></i>Carrito <span
+                <ul class="barra-menu">
+                    <li><button id="todos" class="menu boton-nav active"><i class="bi bi-list"></i>Mostrar todo</button>
+                    </li>
+                    <li><button id="cervezas" class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Cervezas</button></li>
+                    <li><button id="gins" class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Gin</button></li>
+                    <li><button id="vinos" class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Vinos</button></li>
+                    <li><button id="whiskies" class="menu boton-nav"><i class="bi bi-arrow-right-short"></i>Whiskies</button></li>
+                    <li><a class="menu boton-carrito" href="./ecommerce.html"><i class="bi bi-cart4"></i>Carrito <span id="numero-carrito"
                                 class="numero">0</span></a></li>
                 </ul>
             </nav>
@@ -31,57 +32,25 @@
             </footer>
         </aside>
         <main>
-            <h2 class="titulo">Todos los productos</h2>
-            <div class="contenedor-item">
-                <div class="item">
-                    <img class="imagen-item" src="./resources/Whiskies/blacklabel.webp" alt="">
-                    <div class="detalles-item">
-                        <h3 class="titulo-item">BlackLabel</h3>
-                        <p class="precio-item">$10</p>
-                        <button class="agregar-item">Agregar</button>
-                    </div>
-                </div>
-                <div class="contenedor-item">
-                    <div class="item">
-                        <img class="imagen-item" src="./resources/Whiskies/ballantines.webp" alt="">
-                        <div class="detalles-item">
-                            <h3 class="titulo-item">Ballantines</h3>
-                            <p class="precio-item">$10</p>
-                            <button class="agregar-item">Agregar</button>
-                        </div>
-                    </div>
-                    <div class="contenedor-item">
-                        <div class="item">
-                            <img class="imagen-item" src="./resources/Whiskies/glenffidich.webp" alt="">
-                            <div class="detalles-item">
-                                <h3 class="titulo-item">Glenffidich</h3>
-                                <p class="precio-item">$10</p>
-                                <button class="agregar-item">Agregar</button>
-                            </div>
-                        </div>
-                        <div class="contenedor-item">
-                            <div class="item">
-                                <img class="imagen-item" src="./resources/Whiskies/glenlivet.webp" alt="">
-                                <div class="detalles-item">
-                                    <h3 class="titulo-item">Glenlivet</h3>
-                                    <p class="precio-item">$10</p>
-                                    <button class="agregar-item">Agregar</button>
-                                </div>
-                            </div>
-                            <div class="contenedor-item">
-                                <div class="item">
-                                    <img class="imagen-item" src="./resources/Whiskies/jackhoney.webp" alt="">
-                                    <div class="detalles-item">
-                                        <h3 class="titulo-item">Jack Daniels Honey</h3>
-                                        <p class="precio-item">$10</p>
-                                        <button class="agregar-item">Agregar</button>
-                                    </div>
-                                </div>
-                            </div>
+            <h2 id="titulo" class="titulo">Todos los productos</h2>
+            <div id="contenedor-item" class="contenedor-item">
+            </div>
+
         </main>
+
     </div>
 
     <script src="./js/main.js"></script>
 </body>
 
 </html>
+
+<!-- <div class="item">
+    <img class="imagen-item" src="./resources/Whiskies/blacklabel.webp" alt="">
+    <div class="detalles-item">
+        <h3 class="titulo-item">BlackLabel</h3>
+        <h5 class="contenido-ml">500ml</h5>
+        <p class="precio-item">$10</p>
+        <button class="agregar-item">Agregar</button>
+    </div>
+</div> -->
