@@ -6,6 +6,9 @@ const cItems = document.querySelector("#c-items");
 const cDividido = document.querySelector("#c-dividido");
 const cComprado = document.querySelector("#c-comprado");
 let botonEliminar = document.querySelectorAll(".carrito-eliminar");
+const vaciarDelCarrito = document.querySelector("#carrito-vaciar")
+const totalCarrito = document.querySelector("#total")
+let comprarAhora = document.querySelector("#carrito-comprar");
 
 function cargarItemsCarrito() {
     if (itemsCarrito && itemsCarrito.length > 0) {
@@ -58,6 +61,7 @@ function cargarItemsCarrito() {
     
     }
     actualizarBotonEliminar();
+    actualizarTotalCarrito();
 }
 
 cargarItemsCarrito(); 
@@ -77,4 +81,27 @@ function eliminarDelCarrito(e) {
     cargarItemsCarrito();
     
     localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
+}
+
+vaciarDelCarrito.addEventListener("click", vaciarCarrito);
+function vaciarCarrito() {
+    itemsCarrito.length = 0;
+    localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
+    cargarItemsCarrito();
+}
+
+function actualizarTotalCarrito() {
+    const totalCarrito = itemsCarrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0)
+    total.innerText = `$${totalCarrito}`
+}
+
+comprarAhora.addEventListener("click", comprarCarrito);
+function comprarCarrito() {
+    itemsCarrito.length = 0;
+    localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
+
+    cVacio.classList.add("disabled");
+    cItems.classList.add("disabled");
+    cDividido.classList.add("disabled");
+    cComprado.classList.remove("disabled");
 }
