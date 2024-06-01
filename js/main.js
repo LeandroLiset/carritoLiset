@@ -326,14 +326,26 @@ function actualizarAgregarBotones(){
     })
 }
 
-const itemsCarrito = [];
+
+
+let itemsCarrito = [];
+
+let itemsCarritoLocalStorage = localStorage.getItem("productos-carrito-liset");
+
+if (itemsCarritoLocalStorage) {
+    itemsCarrito = JSON.parse(itemsCarritoLocalStorage);
+    actualizarNumeroCarrito();
+} else {
+    itemsCarrito = [];
+}
+
 
 function agregarCarrito(e) {
-    const id = e.currentTarget.id;
-    const itemAgregado = items.find(item => item.id === id);
+    const idBoton = e.currentTarget.id;
+    const itemAgregado = items.find(item => item.id === idBoton);
     
-    if(itemsCarrito.some(item => item.id === id)) {
-        const index = itemsCarrito.findIndex(item => item.id === id);
+    if(itemsCarrito.some(item => item.id === idBoton)) {
+        const index = itemsCarrito.findIndex(item => item.id === idBoton);
         itemsCarrito[index].cantidad++;
     } else {
         itemAgregado.cantidad = 1;
@@ -351,3 +363,5 @@ function actualizarNumeroCarrito() {
     numeroCarrito.innerText = nuevoNumeroCarrito;
     
 }
+
+
