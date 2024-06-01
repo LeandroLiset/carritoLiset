@@ -8,7 +8,7 @@ const cComprado = document.querySelector("#c-comprado");
 let botonEliminar = document.querySelectorAll(".carrito-eliminar");
 
 function cargarItemsCarrito() {
-    if (itemsCarrito) {
+    if (itemsCarrito && itemsCarrito.length > 0) {
 
         cVacio.classList.add("disabled");
         cItems.classList.remove("disabled");
@@ -76,4 +76,5 @@ function eliminarDelCarrito(e) {
     itemsCarrito.splice(index, 1);
     cargarItemsCarrito();
     
+    localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
 }
