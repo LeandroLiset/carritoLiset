@@ -17,9 +17,9 @@ function cargarItemsCarrito() {
         cItems.classList.remove("disabled");
         cDividido.classList.remove("disabled");
         cComprado.classList.add("disabled");
-        
+
         cItems.innerHTML = "";
-    
+
         itemsCarrito.forEach(item => {
             const div = document.createElement("div");
             div.classList.add("carrito-item");
@@ -48,25 +48,25 @@ function cargarItemsCarrito() {
          <button class="carrito-eliminar" id=${item.id}><i class="bi bi-trash3-fill"></i></button>
             `;
             cItems.append(div);
-    
+
         })
-    
-    
+
+
     } else {
-    
+
         cVacio.classList.remove("disabled");
         cItems.classList.add("disabled");
         cDividido.classList.add("disabled");
         cComprado.classList.add("disabled");
-    
+
     }
     actualizarBotonEliminar();
     actualizarTotalCarrito();
 }
 
-cargarItemsCarrito(); 
+cargarItemsCarrito();
 
-function actualizarBotonEliminar(){
+function actualizarBotonEliminar() {
     botonEliminar = document.querySelectorAll(".carrito-eliminar");
 
     botonEliminar.forEach(boton => {
@@ -75,19 +75,48 @@ function actualizarBotonEliminar(){
 }
 
 function eliminarDelCarrito(e) {
+    Toastify({
+        text: "This is a toast",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
     const idBoton = e.currentTarget.id;
     const index = itemsCarrito.findIndex(item => item.id === idBoton);
     itemsCarrito.splice(index, 1);
     cargarItemsCarrito();
-    
+
     localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
 }
 
 vaciarDelCarrito.addEventListener("click", vaciarCarrito);
 function vaciarCarrito() {
-    itemsCarrito.length = 0;
-    localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
-    cargarItemsCarrito();
+    Swal.fire({
+        title: "Estas seguro ?",
+        icon: "question",
+        html: "Se van a borrar tus productos.",
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: "si",
+        cancelButtonText: "Cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire("Tu carrito ha sido eliminado", "", "success");
+            itemsCarrito.length = 0;
+            localStorage.setItem("productos-carrito-liset", JSON.stringify(itemsCarrito));
+            cargarItemsCarrito();
+
+        }
+    });
+
 }
 
 function actualizarTotalCarrito() {

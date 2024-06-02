@@ -1,270 +1,20 @@
-const items = [
+let items = [];
 
-    {
-        id: "amstel",
-        titulo: "Amstel Lager",
-        imagen: "./resources/Cervezas/amstellager.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
+async function fetchItems() {
+    try {
+        const response = await fetch("./js/items.json");
+        if (!response.ok) {
+            throw new Error('La respuesta de la red no fue correcta: ' + response.statusText);
+        }
+        const data = await response.json();
+        items = data;
+        cargarItems(items);
+    } catch (error) {
+        console.error('Ha habido un problema con tu operación de fetch:', error);
+    }
+}
 
-    {
-        id: "budweiser",
-        titulo: "Budweiser",
-        imagen: "./resources/Cervezas/budweiser.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
-
-    {
-        id: "imperial",
-        titulo: "Imperial Lager",
-        imagen: "./resources/Cervezas/imperiallager.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
-
-    {
-        id: "quilmes",
-        titulo: "Quilmes",
-        imagen: "./resources/Cervezas/quilmes.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
-
-    {
-        id: "schneider",
-        titulo: "Schenider",
-        imagen: "./resources/Cervezas/schneider.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
-
-    {
-        id: "stella",
-        titulo: "Stella Artois",
-        imagen: "./resources/Cervezas/stellaartois.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
-
-    {
-        id: "warsteiner",
-        titulo: "Warsteiner",
-        imagen: "./resources/Cervezas/warsteiner.webp",
-        precio: 10,
-        ml: "500 ml",
-        categoria: {
-            nombre: "Cervezas",
-            id: "cervezas"
-        },
-    },
-
-    {
-        id: "beefeater",
-        titulo: "Beefeater",
-        imagen: "./resources/Gin/beefeater.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Gins",
-            id: "gins"
-        },
-    },
-
-    {
-        id: "bombay",
-        titulo: "Bombay",
-        imagen: "./resources/Gin/bombay.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Gins",
-            id: "gins"
-        },
-    },
-
-    {
-        id: "botanist",
-        titulo: "The Botanist",
-        imagen: "./resources/Gin/botanist.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Gins",
-            id: "gins"
-        },
-    },
-
-    {
-        id: "bulldog",
-        titulo: "Bulldog",
-        imagen: "./resources/Gin/bulldog.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Gins",
-            id: "gins"
-        },
-    },
-
-    {
-        id: "tanqueray",
-        titulo: "Tanqueray",
-        imagen: "./resources/Gin/tanqueray.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Gins",
-            id: "gins"
-        },
-    },
-
-    {
-        id: "dvcatena",
-        titulo: "D.V. Catena",
-        imagen: "./resources/vinos/dvcatena.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Vinos",
-            id: "vinos"
-        },
-    },
-
-    {
-        id: "malamado",
-        titulo: "Malamado",
-        imagen: "./resources/vinos/malamado.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Vinos",
-            id: "vinos"
-        },
-    },
-
-    {
-        id: "rutini",
-        titulo: "Rutini",
-        imagen: "./resources/vinos/rutini.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Vinos",
-            id: "vinos"
-        },
-    },
-
-    {
-        id: "trumpeter",
-        titulo: "Trumpeter",
-        imagen: "./resources/Vinos/trumpeter.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Vinos",
-            id: "vinos"
-        },
-    },
-
-    {
-        id: "zuccardi",
-        titulo: "Zuccardi",
-        imagen: "./resources/Vinos/zuccardi.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Vinos",
-            id: "vinos"
-        },
-    },
-
-    {
-        id: "ballantines",
-        titulo: "Ballantines",
-        imagen: "./resources/Whiskies/ballantines.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Whiskies",
-            id: "whiskies"
-        },
-    },
-
-    {
-        id: "black-label",
-        titulo: "Black Label",
-        imagen: "./resources/Whiskies/blacklabel.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Whiskies",
-            id: "whiskies"
-        },
-    },
-
-    {
-        id: "glenffidich",
-        titulo: "Glenffidich",
-        imagen: "./resources/Whiskies/glenffidich.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Whiskies",
-            id: "whiskies"
-        },
-    },
-
-    {
-        id: "glenlivet",
-        titulo: "Glenlivet",
-        imagen: "./resources/Whiskies/glenlivet.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Whiskies",
-            id: "whiskies"
-        },
-    },
-
-    {
-        id: "jack-daniels",
-        titulo: "Jack Daniels",
-        imagen: "./resources/Whiskies/jackhoney.webp",
-        precio: 10,
-        ml: "750 ml",
-        categoria: {
-            nombre: "Whiskies",
-            id: "whiskies"
-        },
-    },
-
-]
+fetchItems();
 
 const contenedorItems = document.querySelector("#contenedor-item");
 const botonesNav = document.querySelectorAll(".boton-nav");
@@ -293,7 +43,7 @@ function cargarItems(itemsSeleccionados) {
     actualizarAgregarBotones();
 }
 
-cargarItems(items);
+
 
 // EVENTOS
 
@@ -341,6 +91,20 @@ if (itemsCarritoLocalStorage) {
 
 
 function agregarCarrito(e) {
+    Toastify({
+        text: "This is a toast",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     const idBoton = e.currentTarget.id;
     const itemAgregado = items.find(item => item.id === idBoton);
     
