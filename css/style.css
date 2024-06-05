@@ -1,91 +1,88 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.contenedor{
+body {
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr;
     background-color: rgb(65, 143, 233);
 }
 
-ul{
-    list-style-type: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-.titulo{
-    color: rgb(65, 143, 233);
-}
-aside{
-    padding: 2rem;
-    color: white;
-    position: sticky;
-    height: 100vh;
-    top: 0;
+header {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    background-color: rgb(65, 143, 233);
+    color: white;
+    padding: 1rem 2rem;
 }
 
-.logo{
+header .logo {
     font-weight: 300;
     font-size: 1.6rem;
 }
 
-.barra-menu{
+nav ul {
+    list-style-type: none;
     display: flex;
-    flex-direction: column;
     gap: 1rem;
 }
 
-.menu{
-    background-color: transparent;
-    border: 0;
-    color: white;
-    cursor: pointer;
+nav ul li {
     display: flex;
     align-items: center;
-    gap: 1rem;
+}
+
+nav ul li a,
+nav ul li button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
     font-weight: 600;
-    padding: .25rem;
+    padding: 0.25rem;
     font-size: 0.8rem;
-    width: 100%;
 }
 
-.menu.active{
-    background-color: white;
+nav ul li a:hover,
+nav ul li button:hover {
+    text-decoration: underline;
+}
+
+.titulo {
     color: rgb(65, 143, 233);
-    border-radius: 1rem;
+    margin: 1rem 0;
+    text-align: center;
 }
 
-.boton-carrito{
-    margin-top: 2rem;
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(65, 143, 233);
+    color: white;
 }
 
-.footer{
-    color: rgb(0, 0, 0);
-    font-size: 0.85rem ;
-}
-
-main{
+main {
     background-color: white;
     margin: 1rem;
     border-radius: 1rem;
     padding: 2rem;
 }
 
-.contenedor-item{
+.contenedor-item {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
 }
 
-.imagen-item{
+.imagen-item {
     height: 250px;
     max-width: 100%;
     border-radius: 1rem;
@@ -93,82 +90,78 @@ main{
     display: flex;
 }
 
-.detalles-item{
+.detalles-item {
     background-color: rgb(65, 143, 233);
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 1rem;
     margin-top: 0;
     display: flex;
     flex-direction: column;
 }
 
-
-div.item{
+div.item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.agregar-item{
+.agregar-item {
     border: 0;
     background-color: white;
     color: rgb(65, 143, 233);
-    padding: .5;
+    padding: 0.5;
     border-radius: 2rem;
     cursor: pointer;
     text-transform: uppercase;
 }
 
-.carrito-container{
+.carrito-container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.carrito-vacio{
+.carrito-vacio {
     color: rgb(65, 143, 233);
 }
 
-.carrito-items{
+.carrito-items {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
 }
 
-.carrito-item{
+.carrito-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);
     padding: 1rem;
     border-radius: 1rem;
-    
 }
 
-.carrito-imagen{
+.carrito-imagen {
     height: 4rem;
-    border-radius: 1rem;  
+    border-radius: 1rem;
 }
 
-.carrito-item small{
+.carrito-item small {
     font-size: 0.75rem;
 }
 
-.carrito-eliminar{
+.carrito-eliminar {
     border: 0;
     background-color: transparent;
     color: red;
     cursor: pointer;
 }
 
-.carrito-dividido{
+.carrito-dividido {
     display: flex;
     justify-content: space-between;
-
 }
 
-.carrito-vaciar{
+.carrito-vaciar {
     display: flex;
     border: 0;
     background-color: rgb(218, 218, 218);
@@ -179,7 +172,7 @@ div.item{
     cursor: pointer;
 }
 
-.carrito-comprar{
+.carrito-comprar {
     border: 0;
     background-color: rgb(65, 143, 233);
     padding: 1rem;
@@ -190,11 +183,11 @@ div.item{
     border-bottom-right-radius: 1rem;
 }
 
-.carrito-derecha{
+.carrito-derecha {
     display: flex;
 }
 
-.carrito-total{
+.carrito-total {
     display: flex;
     border: 0;
     background-color: rgb(218, 218, 218);
@@ -205,19 +198,23 @@ div.item{
     border-bottom-left-radius: 1rem;
 }
 
-.numero{
+.numero {
     background-color: white;
     color: rgb(65, 143, 233);
-    padding: .15rem .25rem;
-    border-radius: .25rem;
+    padding: 0.15rem 0.25rem;
+    border-radius: 0.25rem;
 }
 
-.comprado{
+.comprado {
     color: rgb(65, 143, 233);
 }
 
-/* CREAR UNA CLASE PARA OCULTAR TODO LO QUE VAYAMOS PROBANDO */
-
-.disabled{
+.disabled {
     display: none;
 }
+
+.logo-link {
+    text-decoration: none;
+    color: white;
+}
+

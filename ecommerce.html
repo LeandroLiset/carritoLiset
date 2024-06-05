@@ -11,23 +11,18 @@
 </head>
 
 <body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <h1 class="logo">DrunkStore</h1>
+        </a>
+        <nav>
+            <ul class="barra-menu">
+                <li><a class="menu boton-volver" href="./index.html"><i class="bi bi-arrow-left-short"></i>Seguir comprando</a></li>
+                <li><a class="menu boton-carrito active" href="./ecommerce.html"><i class="bi bi-cart4"></i>Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="contenedor">
-        <aside>
-            <header>
-                <h1 class="logo">DrunkStore</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li><a class="menu boton-volver" href="./index.html"><i
-                                class="bi bi-arrow-left-short"></i></i>Seguir comprando </a></li>
-                    <li><a class="menu boton-carrito active" href="./ecommerce.html"><i
-                                class="bi bi-cart4"></i>Carrito</a></li>
-                </ul>
-            </nav>
-            <footer>
-                <p class="footer">© 2024 - Derechos Reservados</p>
-            </footer>
-        </aside>
         <main>
             <h2 class="titulo">Carrito de compras</h2>
             <div class="carrito-container">
@@ -49,9 +44,11 @@
                 </div>
                 <p id="c-comprado" class="comprado disabled">Muchas gracias por comprar en DrunkStore.</p>
             </div>
-
         </main>
     </div>
+    <footer>
+        <p class="footer">© 2024 - Derechos Reservados</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/eccomerce.js"></script>
