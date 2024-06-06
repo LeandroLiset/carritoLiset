@@ -1,17 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Chocolate Classical Sans", sans-serif;
+    
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Chocolate Classical Sans", sans-serif;
 }
 
 .contenedor {
     display: grid;
     grid-template-columns: 1fr;
     background-color: rgb(65, 143, 233);
+
 }
 
 header {
@@ -65,15 +72,13 @@ nav ul li button:hover {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: rgb(65, 143, 233);
+    background-color: #418fe9;
     color: white;
 }
 
 main {
     background-color: white;
-    margin: 1rem;
-    border-radius: 1rem;
-    padding: 2rem;
+    padding-bottom: 1rem;
 }
 
 .contenedor-item {
@@ -109,7 +114,7 @@ div.item {
     border: 0;
     background-color: white;
     color: rgb(65, 143, 233);
-    padding: 0.5;
+    padding: 0.5rem;
     border-radius: 2rem;
     cursor: pointer;
     text-transform: uppercase;
@@ -218,3 +223,60 @@ div.item {
     color: white;
 }
 
+
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .contenedor-item {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .carrito-dividido {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .carrito-derecha {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .contenedor-item {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contenedor-item {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-dividido {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .carrito-derecha {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+    }
+
+    .contenedor {
+        padding: 0 1rem;
+    }
+}

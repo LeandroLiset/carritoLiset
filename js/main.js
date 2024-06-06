@@ -92,18 +92,18 @@ if (itemsCarritoLocalStorage) {
 
 function agregarCarrito(e) {
     Toastify({
-        text: "This is a toast",
+        text: "Agregado al carrito.",
         duration: 3000,
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, #418fe9, #679edd)",
         },
-        onClick: function(){} // Callback after click
+        onClick: function(){} 
       }).showToast();
     const idBoton = e.currentTarget.id;
     const itemAgregado = items.find(item => item.id === idBoton);
