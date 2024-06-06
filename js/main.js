@@ -123,8 +123,6 @@ function agregarCarrito(e) {
 
 function actualizarNumeroCarrito() {
     let nuevoNumeroCarrito = itemsCarrito.reduce((acc, item) => acc + item.cantidad, 0);
-    numeroCarrito.innerText = nuevoNumeroCarrito;
-    
+    numeroCarrito.innerText = nuevoNumeroCarrito;  
+      
 }
-
-

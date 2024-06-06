@@ -258,7 +258,6 @@ div.item {
     }
 }
 
-
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -266,8 +265,12 @@ div.item {
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row; 
         gap: 0.5rem;
+    }
+
+    nav ul li {
+        margin-right: 0.5rem; 
     }
 
     .contenedor-item {
@@ -288,4 +291,9 @@ div.item {
     .contenedor {
         padding: 0 1rem;
     }
+    .barra-menu li a,
+    .barra-menu li button {
+        font-size: 0.7rem; 
+    }
 }
+
